@@ -315,10 +315,7 @@ https://github.com/ariostas-talks/2026-03-24-cicd
 
 ### Exercise 1
 
-Create a workflow triggered on push and pull requests with two jobs:
-
-- `lint`: runs `ruff check` on the package. You can either pip-install `ruff` or use the `astral-sh/ruff-action` action.
-- `test`: runs `pytest` on the package. It should only run if the `lint` job passes.
+Create a new job that does some linting before our matrix of jobs, using `ruff`. You can `pip`-install it, run it with `pipx` (which is pre-installed), or use the `astral-sh/ruff-action` action. It should run `ruff check`, and the testing matrix should not run if this fails.
 
 (In practice, it is more common to use pre-commit for this, but that's a topic for another day)
 
