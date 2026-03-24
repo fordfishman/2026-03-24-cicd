@@ -26,11 +26,8 @@ jobs:
     name: Lint the code
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v6
-      - name: Set up Python
-        uses: actions/setup-python@v6
-      - uses: astral-sh/ruff-action
+      - name: Ruff
+        uses: astral-sh/ruff-action@v3
         
 
   test: 
