@@ -26,7 +26,7 @@ jobs:
   test: 
     name: Test the Python package
     runs-on: ${{ matrix.platform }}
-    stategy:
+    strategy:
       matrix:
         python-version: ["3.10", "3.14"]
         platform: [ubuntu-latest, macos-latest, windows-latest]
