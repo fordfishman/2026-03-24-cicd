@@ -26,6 +26,8 @@ jobs:
     name: Lint the code
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
       - name: Ruff
         uses: astral-sh/ruff-action@v3
         
