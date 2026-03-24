@@ -26,7 +26,6 @@ jobs:
 
   test: 
     name: Test the Python package
-    needs: lint
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
