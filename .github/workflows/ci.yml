@@ -44,6 +44,9 @@ jobs:
           python-version: ${{ matrix.python_version }}
       - name: Install the package
         run: pip install .[test]
+      - if: matrix.python-version == '3.14'
+        name: Conditional steps
+        run: echo "Using Python 3.14"
       - name: Run the tests
         run: pytest -vv
 
