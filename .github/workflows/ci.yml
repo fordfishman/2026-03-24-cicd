@@ -12,10 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello world 
-        run: echo "Hello World"
+        id: hello-step
+        run: |
+          echo "Hello World"
+          echo "message='My message'" >> $GITHUB_OUTPUT
       - name: Second steps
-        run: echo "Second"
-
+        run: | 
+          echo "Second"
+          echo ${{ steps.hello-step.outputs.message}}
   goodbye:
     name: my goodbye job
     needs: hello
